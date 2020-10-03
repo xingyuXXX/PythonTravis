@@ -3,4 +3,4 @@ python:
   - 3.8
 # command to run tests
 script:
-  - unittest
+  - python -m py_compile test_calculator.py
