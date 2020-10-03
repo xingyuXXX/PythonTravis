@@ -10,14 +10,14 @@ from calculator import Calculator
 
 
 class TestCalculator(TestCase):
+
+    def setUp(self) -> None:
+        self.x = 1
+        self.y = 2
+        self.calculator = Calculator(self.x, self.y)
+
     def test_add(self):
-        x = 1
-        y = 2
-        calculator = Calculator.add(x, y)
-        assert calculator.add() == x + y, "add method doesnt work"
+        assert self.calculator.add() == self.x + self.y, "add method doesnt work"
 
     def test_subtract(self):
-        x = 1
-        y = 2
-        calculator = Calculator.subtract(x, y)
-        assert calculator.subtract() == x - y, "subtract method doesnt work"
+        assert self.calculator.subtract() == self.x - self.y, "subtract method doesnt work"
